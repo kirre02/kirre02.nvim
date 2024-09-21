@@ -61,7 +61,7 @@ in rec {
     vimPlugins.nvim-colorizer-lua
     vimPlugins.nvim-notify
     vimPlugins.nvim-treesitter-context
-    vimPlugins.nvim-ts-rainbow2
+    vimPlugins.rainbow-delimiters-nvim
     vimPlugins.trouble-nvim
 
 
