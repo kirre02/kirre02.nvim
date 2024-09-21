@@ -1,0 +1,43 @@
+name: "check flake"
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+jobs:
+  check:
+    strategy:
+      matrix:
+        os:
+          - macos-latest
+          - ubuntu-latest
+        profile:
+          - default
+          - neovim
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: DeterminateSystems/nix-installer-action@main
+      - uses: DeterminateSystems/magic-nix-cache-action@main
+      - run: nix develop -c just check
+
+  package:
+    needs:
+      - check
+    strategy:
+      matrix:
+        os:
+          - macos-latest
+          - ubuntu-latest
+        profile:
+          - default
+          - neovim
+    runs-on: ${{ matrix.os }}
+    steps:
+
+      - uses: actions/checkout@v4
+      - uses: DeterminateSystems/nix-installer-action@main
+      - uses: DeterminateSystems/magic-nix-cache-action@main
+      - run: nix develop -c just package "${{ matrix.profile }}"
