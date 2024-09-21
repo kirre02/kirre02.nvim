@@ -2,16 +2,6 @@
 {inputs}: let
   inherit (inputs.nixpkgs) legacyPackages;
 in rec {
-  mkCopilotChat = {system}: let
-    inherit (pkgs) vimUtils;
-    inherit (vimUtils) buildVimPlugin;
-    pkgs = legacyPackages.${system};
-  in
-    buildVimPlugin {
-      name = "CopilotChat";
-      src = inputs.copilotchat;
-    };
-
   mkVimPlugin = {system}: let
     inherit (pkgs) vimUtils;
     inherit (vimUtils) buildVimPlugin;
@@ -32,7 +22,6 @@ in rec {
 
   mkNeovimPlugins = {system}: let
     inherit (pkgs) vimPlugins;
-    CopilotChat-nvim = mkCopilotChat {inherit system;};
     pkgs = legacyPackages.${system};
     kirre02-nvim = mkVimPlugin {inherit system;};
   in [
