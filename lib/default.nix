@@ -105,7 +105,7 @@ in rec {
 
   mkExtraConfig = ''
     lua << EOF
-      require 'TheAltF4Stream'.init()
+      require 'kirre02'.init()
     EOF
   '';
 
