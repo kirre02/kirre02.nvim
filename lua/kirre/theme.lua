@@ -1,12 +1,12 @@
-local catppuccin = require 'catppuccin'
+local tokyonight = require 'tokyonight'
 local colorizer = require 'colorizer'
 local gitsigns = require 'gitsigns'
 local lualine = require 'lualine'
 local noice = require 'noice'
 
 local function init()
-    catppuccin.setup({
-        flavour = "macchiato",
+    tokyonight.setup({
+        flavour = "Storm",
         integrations = {
             gitsigns = true,
             --indent_blankline = { enabled = true },
@@ -30,7 +30,7 @@ local function init()
             extensions = { "fzf", "quickfix" },
             icons_enabled = false,
             section_separators = { left = '', right = '' },
-            theme = "catppuccin"
+            theme = "tokyonight"
         },
         sections = {
             lualine_x = {
@@ -57,7 +57,7 @@ local function init()
         }
     }
 
-    vim.cmd.colorscheme "catppuccin"
+    vim.cmd.colorscheme "tokyonight"
 end
 
 return {
