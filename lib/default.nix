@@ -105,7 +105,7 @@ in rec {
 
   mkExtraConfig = ''
     lua << EOF
-      require 'kirre'.init()
+      require 'kirre02'.init()
     EOF
   '';
 
