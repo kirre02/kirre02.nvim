@@ -139,7 +139,7 @@ local function init()
             },
         },
         terraformls = {},
-        tsserver = {},
+        ts_ls = {},
         yamlls = {
             settings = {
                 yaml = {
