@@ -8,7 +8,7 @@ in rec {
     pkgs = legacyPackages.${system};
   in
     buildVimPlugin {
-      name = "kirre02";
+      name = "kirre";
       postInstall = ''
         rm -rf $out/.envrc
         rm -rf $out/.gitignore
@@ -105,7 +105,7 @@ in rec {
 
   mkExtraConfig = ''
     lua << EOF
-      require 'kirre02'.init()
+      require 'kirre'.init()
     EOF
   '';
 

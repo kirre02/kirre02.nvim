@@ -1,1 +1,1 @@
-require 'kirre02'.init()
+require 'kirre'.init()
