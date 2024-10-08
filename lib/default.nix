@@ -8,7 +8,7 @@ in rec {
     pkgs = legacyPackages.${system};
   in
     buildVimPlugin {
-      name = "kirre";
+      name = "kirre02";
       postInstall = ''
         rm -rf $out/.envrc
         rm -rf $out/.gitignore
