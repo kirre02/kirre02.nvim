@@ -5,7 +5,7 @@ local function init()
     require 'kirre.floaterm'.init()
     require 'kirre.noice'.init()
     require 'kirre.telescope'.init()
-    require 'kirre.cmp'.init()
+    require 'kirre.blink'.init()
 end
 
 return {

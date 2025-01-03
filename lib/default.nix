@@ -43,12 +43,18 @@ in rec {
     # floaterm
     vimPlugins.vim-floaterm
 
+    # blink
+    vimPlugins.blink-cmp
+
+    # cmp
+    # vimPlugins.cmp-nvim-lsp
+    # vimPlugins.cmp-buffer
+    # vimPlugins.cmp-path
+    # vimPlugins.cmp-cmdline
+    # vimPlugins.nvim-cmp
+    
+
     # extras
-    vimPlugins.cmp-nvim-lsp
-    vimPlugins.cmp-buffer
-    vimPlugins.cmp-path
-    vimPlugins.cmp-cmdline
-    vimPlugins.nvim-cmp
     vimPlugins.luasnip
     vimPlugins.cmp_luasnip
     vimPlugins.lspkind-nvim

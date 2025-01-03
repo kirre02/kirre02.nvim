@@ -2,8 +2,6 @@
   description = "Neovim configuration for myself.";
 
   inputs = {
-    copilotchat.flake = false;
-    copilotchat.url = "github:CopilotC-Nvim/CopilotChat.nvim?ref=canary";
     flake-parts.url = "github:hercules-ci/flake-parts";
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
   };
