@@ -23,25 +23,7 @@ local function init()
         sources = {
             default = { 'lsp', 'snippets', 'buffer', 'lua', 'path' },
         },
-        formatting = {
-            format = function(entry, vim_item)
-                vim_item.kind = require("lspkind").presets.default[vim_item.kind] or vim_item.kind
-                vim_item.menu = ({
-                    lsp = "[LSP]",
-                    snippets = "[Snip]",
-                    buffer = "[Buf]",
-                    lua = "[Lua]",
-                    path = "[Path]",
-                })[entry.source.name]
-                return vim_item
-            end,
-        },
-        documentation = {
-            border = 'rounded',
-            winhighlight = "Normal:CmpDoc",
-            scrollbar = '║',
-        },
-    })
+   })
 end
 
 return {

@@ -8,6 +8,42 @@ in rec {
     pkgs = legacyPackages.${system};
   in
     buildVimPlugin {
+
+      buildInputs = with pkgs; [nodejs];
+
+      dependencies = with pkgs.vimPlugins; [
+        # languages
+        nvim-lspconfig
+        nvim-treesitter.withAllGrammars
+        rust-tools-nvim
+
+        # telescope
+        plenary-nvim
+        telescope-nvim
+
+        # theme
+        tokyonight-nvim
+
+        # floaterm
+        vim-floaterm
+
+        # blink
+        blink-cmp
+
+        # extras
+        luasnip
+        cmp_luasnip
+        lspkind-nvim
+
+        gitsigns-nvim
+        lualine-nvim
+        comment-nvim
+        noice-nvim
+        nvim-colorizer-lua
+        nvim-notify
+        nvim-treesitter-context
+      ];
+
       name = "kirre";
       postInstall = ''
         rm -rf $out/.envrc
@@ -26,47 +62,10 @@ in rec {
     kirre02-nvim = mkVimPlugin {inherit system;};
   in [
     # languages
-    vimPlugins.nvim-lspconfig
-    vimPlugins.nvim-treesitter.withAllGrammars
-    vimPlugins.rust-tools-nvim
     vimPlugins.vim-just
-    vimPlugins.vim-nickel
     vimPlugins.zig-vim
 
-    # telescope
-    vimPlugins.plenary-nvim
-    vimPlugins.telescope-nvim
-
-    # theme
-    vimPlugins.tokyonight-nvim
-
-    # floaterm
-    vimPlugins.vim-floaterm
-
-    # blink
-    vimPlugins.blink-cmp
-
-    # cmp
-    # vimPlugins.cmp-nvim-lsp
-    # vimPlugins.cmp-buffer
-    # vimPlugins.cmp-path
-    # vimPlugins.cmp-cmdline
-    # vimPlugins.nvim-cmp
-    
-
-    # extras
-    vimPlugins.luasnip
-    vimPlugins.cmp_luasnip
-    vimPlugins.lspkind-nvim
-
-    vimPlugins.gitsigns-nvim
-    vimPlugins.lualine-nvim
-    vimPlugins.nerdcommenter
-    vimPlugins.noice-nvim
-    vimPlugins.nui-nvim
-    vimPlugins.nvim-colorizer-lua
-    vimPlugins.nvim-notify
-    vimPlugins.nvim-treesitter-context
+    #extras
     vimPlugins.rainbow-delimiters-nvim
     vimPlugins.trouble-nvim
 
