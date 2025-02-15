@@ -21,7 +21,7 @@ local function init()
             nerd_font_variant = 'mono',
         },
         sources = {
-            default = { 'lsp', 'snippets', 'buffer', 'lua', 'path' },
+            default = { 'lsp', 'snippets', 'buffer', 'path' },
         },
    })
 end
